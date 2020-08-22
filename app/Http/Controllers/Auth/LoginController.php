@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Card;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserLoginRequest;
 use App\Providers\RouteServiceProvider;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -36,5 +41,19 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function login(UserLoginRequest $request)
+    {
+        $body = $request->all();
+        $user = User::where('phone_number', $body['phone_number'])->first();
+        $card = Card::where('number', $body['card_number'])->first();
+        if (!$user) {
+            return back()->withError('Користувача не знайдено');
+        }
+        if ($user and $user->id == $card->user_id) {
+            Auth::login($user);
+        }
+        return redirect('home');
     }
 }
