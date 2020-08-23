@@ -15,7 +15,7 @@ class CardController extends Controller
         $sum = $bodyContent['sum'];
 
         $card = Card::findOrFail($card_id);
-        if ($card){
+        if ($card) {
             $card->balance += $sum;
             $card->save();
         }

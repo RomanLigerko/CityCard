@@ -220,10 +220,10 @@ svg {
 .table{
     height: 310px;
 }
-.cards{
+.fcards{
     display: flex;
 }
-.card{
+.fcard{
     padding: 10px;
     margin: 5px;
     height: 110px;

@@ -32,6 +32,6 @@ class HomeController extends Controller
             $journeyRecords = JourneyHistory::where('user_id', auth()->user()->id)->paginate(5);
             $cards = auth()->user()->card;
         }
-        return view('home', ['cards' => $cards, 'balanceRecords' => $balanceRecords, 'journeyRecords'=> $journeyRecords]);
+        return view('home', ['cards' => $cards, 'balanceRecords' => $balanceRecords, 'journeyRecords' => $journeyRecords]);
     }
 }

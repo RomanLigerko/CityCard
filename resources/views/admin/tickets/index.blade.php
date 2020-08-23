@@ -44,7 +44,7 @@
                                         <form action="{{ route('ticket.destroy', $ticket) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <input type="submit"  class="btn btn-danger" value='Видалити'>
+                                            <input type="submit" class="btn btn-danger" value='Видалити'>
                                         </form>
                                     </td>
                                 </tr>

@@ -42,7 +42,7 @@
                                         <form action="{{ route('cities.destroy', $city) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <input type="submit"  class="btn btn-danger" value='Видалити'>
+                                            <input type="submit" class="btn btn-danger" value='Видалити'>
                                         </form>
                                     </td>
                                 </tr>

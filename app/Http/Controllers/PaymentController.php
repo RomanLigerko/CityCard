@@ -18,7 +18,7 @@ class PaymentController extends Controller
         $transport = Transport::findOrFail($transport_id);
         $card = Card::findOrFail($card_id);
 
-        if ($card){
+        if ($card) {
             $card->balance -= $transport->ticket->price;
             $card->save();
         }

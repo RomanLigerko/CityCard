@@ -10,11 +10,9 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
-
                             <div class="form-group row">
                                 <label for="phone_number" class="col-md-4 col-form-label text-md-right">
                                     Телефон</label>
-
                                 <div class="col-md-6">
                                     <input id="phone_number" type="tel"
                                            class="form-control @error('phone_number') is-invalid @enderror"
@@ -31,7 +29,6 @@
                             <div class="form-group row">
                                 <label for="card_number" class="col-md-4 col-form-label text-md-right">Номер
                                     картки</label>
-
                                 <div class="col-md-6">
                                     <input id="card_number" type="tel"
                                            class="form-control @error('card_number') is-invalid @enderror"
@@ -57,7 +54,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
