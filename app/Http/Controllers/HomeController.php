@@ -28,8 +28,8 @@ class HomeController extends Controller
     public function index()
     {
         if (Auth::check()) {
-            $balanceRecords = BalanceHistory::where('user_id', auth()->user()->id)->get();
-            $journeyRecords = JourneyHistory::where('user_id', auth()->user()->id)->get();
+            $balanceRecords = BalanceHistory::where('user_id', auth()->user()->id)->paginate(5);
+            $journeyRecords = JourneyHistory::where('user_id', auth()->user()->id)->paginate(5);
             $cards = auth()->user()->card;
         }
         return view('home', ['cards' => $cards, 'balanceRecords' => $balanceRecords, 'journeyRecords'=> $journeyRecords]);

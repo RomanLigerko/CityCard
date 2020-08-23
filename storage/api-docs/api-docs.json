@@ -1,0 +1,68 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Laravel Swagger API documentation example",
+        "contact": {
+            "email": "admin@example.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost",
+            "description": "Laravel Swagger API server"
+        }
+    ],
+    "paths": {
+        "/admin/cities": {
+            "get": {
+                "tags": [
+                    "Cities"
+                ],
+                "summary": "Display a listing of the resource",
+                "operationId": "citiesAll",
+                "parameters": [
+                    {
+                        "name": "city",
+                        "in": "query",
+                        "description": "The city number",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Everything is fine"
+                    },
+                    "404": {
+                        "description": "Example not found"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "X-APP-ID": {
+                "type": "apiKey",
+                "name": "X-APP-ID",
+                "in": "header"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Pages",
+            "description": "Some example pages"
+        }
+    ],
+    "security": [
+        []
+    ]
+}

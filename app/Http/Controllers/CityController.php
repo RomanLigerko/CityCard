@@ -11,6 +11,38 @@ use Illuminate\Http\Request;
 
 class CityController extends Controller
 {
+
+    /**
+     * @OA\Get(
+     *     path="/admin/cities",
+     *     operationId="citiesAll",
+     *     tags={"Cities"},
+     *     summary="Display a listing of the resource",
+     *     @OA\Parameter(
+     *         name="city",
+     *         in="query",
+     *         description="The city number",
+     *         required=false,
+     *         @OA\Schema(
+     *             type="integer",
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response="200",
+     *         description="Everything is fine"
+     *     ),
+     *     @OA\Response(
+     *         response="404",
+     *         description="Example not found"
+     *     )
+     * )
+     *
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +50,8 @@ class CityController extends Controller
      */
     public function index()
     {
-        //
+        $model = City::all();
+        return response()->json($model);
     }
 
     /**

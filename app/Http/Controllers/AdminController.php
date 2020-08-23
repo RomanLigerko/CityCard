@@ -26,19 +26,19 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $cities = City::all();
+        $cities = City::paginate(5);
         return view('admin.index', ['cities'=> $cities]);
     }
 
     public function transports()
     {
-        $transports = Transport::all();
+        $transports = Transport::paginate(5);
         return view('admin.transports.index', ['transports'=> $transports]);
     }
 
     public function tickets()
     {
-        $tickets = Ticket::all();
+        $tickets = Ticket::paginate(5);
         return view('admin.tickets.index',  ['tickets'=> $tickets]);
     }
 }

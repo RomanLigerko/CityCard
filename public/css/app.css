@@ -217,7 +217,22 @@ svg {
   overflow: hidden;
   vertical-align: middle;
 }
-
+.table{
+    height: 310px;
+}
+.cards{
+    display: flex;
+}
+.card{
+    padding: 10px;
+    margin: 5px;
+    height: 110px;
+    width: 180px;
+    border-radius: 25px;
+    background-color: white;
+    border: 1px solid grey;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
 table {
 
   border-collapse: collapse;
